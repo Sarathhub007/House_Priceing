@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prediction App</title>
 </head>
 <body>
-    <h1>
-        hellow world
-    </h1>
+    <h2>House Price Prediction</h2>
+    <form action="/predict" method="POST">
+        <input type="number" name="MedInc" placeholder="Median Income" step="any" required><br><br>
+        <input type="number" name="HouseAge" placeholder="House Age" step="any" required><br><br>
+        <input type="number" name="AveRooms" placeholder="Average Rooms" step="any" required><br><br>
+        <input type="number" name="AveBedrms" placeholder="Average Bedrooms" step="any" required><br><br>
+        <input type="number" name="Population" placeholder="Population" step="any" required><br><br>
+        <input type="number" name="AveOccup" placeholder="Average Occupancy" step="any" required><br><br>
+        <input type="number" name="Latitude" placeholder="Latitude" step="any" required><br><br>
+        <input type="number" name="Longitude" placeholder="Longitude" step="any" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
 </body>
 </html>
